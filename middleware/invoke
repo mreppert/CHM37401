@@ -1,17 +1,17 @@
 #!/bin/sh
 
-# Use a single user location for all chm37301 instances.
+# Use a single user location for all chm37401 instances.
 # Typical a separate location is used for each tool revision.
 # For this tool however each revision is intended to build on
 # previous revision in a compatible manner. 
 
 toolDirectory=$(dirname $(dirname $0))
-userDirectory=${HOME}/CHM37301user
+userDirectory=${HOME}/CHM37401user
 
 mkdir -p ${userDirectory}/git
 mkdir -p ${userDirectory}/local
 cp -f ${toolDirectory}/main.ipynb ${userDirectory}
 
-/usr/bin/invoke_app "$@" -t chm37301 \
+/usr/bin/invoke_app "$@" -t chm37401 \
                          -C "start_jupyter -A -t ${userDirectory}/main.ipynb" \
                                                   -u anaconda-6
